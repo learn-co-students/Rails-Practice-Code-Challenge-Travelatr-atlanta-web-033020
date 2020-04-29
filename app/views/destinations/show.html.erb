@@ -1,0 +1,10 @@
+<h1><%= @destination.name %></h1>
+<h3>Most recent posts</h3>
+<ul>
+  <% @destination.most_recent_posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %> created at <%= post.created_at %></li>
+  <% end %>
+</ul>
+
+<h3>Featured Post: <%= link_to @featured_post.title, post_path(@featured_post) %></h3>
+<h3>Average Age: <%= @average_age %></h3>
